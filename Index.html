@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.D. Food Products - Authentic Indian Food Manufacturing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-red: #dc2626;
+            --primary-amber: #f59e0b;
+            --light-amber: #fef3c7;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .nav-active {
+            color: var(--primary-red) !important;
+            font-weight: 600;
+        }
+        
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .page-active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(220,38,38,0.1) 0%, rgba(245,158,11,0.1) 100%);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-red-600 font-bold text-xl tracking-wider">S.D. FOOD PRODUCTS</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-red-600 transition-colors nav-active" data-page="home">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-red-600 transition-colors" data-page="about">About</a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-red-600 transition-colors" data-page="products">Products</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-red-600 transition-colors" data-page="contact">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-red-600 nav-active" data-page="home">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-red-600" data-page="about">About</a>
+                <a href="#products" class="block px-3 py-2 text-gray-700 hover:text-red-600" data-page="products">Products</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-red-600" data-page="contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page page-active">
+        <!-- Hero Section -->
+        <section class="hero-gradient min-h-screen flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-red-600 mb-6">
+                            Quality & Trust in Every Bite
+                        </h1>
+                        <p class="text-lg md:text-xl text-amber-600 mb-8">
+                            S.D. Food Products – delivering authentic taste, hygiene, and trust from Sahibabad, Ghaziabad.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button onclick="navigateTo('products')" class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg">
+                                Explore Products
+                            </button>
+                            <button onclick="navigateTo('contact')" class="border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                                Contact Us
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="relative">
+                            <div class="bg-white p-4 rounded-2xl shadow-xl transform rotate-2">
+                                <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/SumitSDFoods.jpeg" style="height:400px; width:400px" alt="Professional portrait of S.D. Food Products company owner, Indian businessperson in formal attire with warm smile, standing in modern food manufacturing facility" class="w-full h-auto rounded-lg transform -rotate-2" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                            </div>
+                            <div class="absolute -inset-2 bg-gradient-to-r from-red-500 to-amber-500 rounded-2xl opacity-20 blur-sm -z-10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-red-600 mb-4">Why Choose Us?</h2>
+                    <p class="text-lg text-gray-600">Commitment to excellence in every product we create</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-award text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Quality Assurance</h3>
+                        <p class="text-gray-600">Rigorous quality checks ensure every product meets the highest standards of excellence.</p>
+                    </div>
+                    <div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-2xl text-amber-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Hygiene Certified</h3>
+                        <p class="text-gray-600">State-of-the-art manufacturing facilities with strict hygiene protocols and certifications.</p>
+                    </div>
+                    <div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-truck text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Nationwide Delivery</h3>
+                        <p class="text-gray-600">Efficient distribution network ensuring fresh products reach you anywhere in India.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section class="min-h-screen bg-white py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-red-600 mb-4">About Us</h1>
+                    <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                    <div class="prose prose-lg max-w-none">
+                        <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                            S.D. Food Products is a trusted manufacturer and distributor based in Sahibabad, Ghaziabad. We are committed to delivering high-quality food items with authentic taste and nutritional value.
+                        </p>
+                        <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                            Our vision is to bring taste, health, and happiness to every household with safe, hygienic, and affordable food products. With years of experience in the food industry, we understand the importance of maintaining traditional flavors while ensuring modern quality standards.
+                        </p>
+                        <p class="text-gray-700 mb-8 text-lg leading-relaxed">
+                            Every product that leaves our facility undergoes multiple quality checks to ensure it meets our strict standards for taste, freshness, and safety. We source our ingredients from trusted suppliers and use state-of-the-art manufacturing processes to deliver the best to your table.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 mt-12">
+                        <div class="bg-red-50 p-6 rounded-lg">
+                            <i class="fas fa-eye text-3xl text-red-600 mb-4"></i>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Our Vision</h3>
+                            <p class="text-gray-600">To be the most trusted food brand in India, known for authenticity, quality, and innovation.</p>
+                        </div>
+                        <div class="bg-amber-50 p-6 rounded-lg">
+                            <i class="fas fa-bullseye text-3xl text-amber-600 mb-4"></i>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Our Mission</h3>
+                            <p class="text-gray-600">To deliver nutritious, tasty, and affordable food products while maintaining the highest standards of hygiene and quality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="products" class="page">
+        <section class="min-h-screen bg-gray-50 py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-red-600 mb-4">Our Products</h1>
+                    <p class="text-lg text-amber-600 mb-8">Explore our wide range of authentic food products</p>
+                    
+                    <!-- Search Bar -->
+                    <div class="max-w-md mx-auto mb-12">
+                        <div class="relative">
+                            <input type="text" id="product-search" placeholder="Search products..." class="w-full px-6 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                            <i class="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product Cards -->
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/Oregano.png" alt="Professional e-commerce photo of a transparent glass jar filled with dried oregano herbs, green leaves visible through clear packaging, white background with soft shadows, modern S.D. Food Products label" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Oregano Seasoning</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/chiliflask.png" alt="Red chili flakes in transparent packaging, vibrant red color with visible chili pieces, clean white background, professional food photography for S.D. Food Products" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Chili Flakes</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/MagicMasala.png" alt="Golden-brown magic masala spice blend in a decorative pouch, aromatic spices visible through packaging, warm lighting, S.D. Food Products branding" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Magic Masala</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/piripiri.png" alt="Piri Piri seasoning in vibrant red packaging, African-inspired design with chili imagery, professional food product photography for S.D. Food Products" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Piri Piri Seasoning</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/ChatMasala.png" alt="Chat masala spice mix in traditional Indian packaging, golden-yellow color scheme, aromatic spices visible, S.D. Food Products label" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Chat Masala</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/mayonnaise.png" alt="Creamy white vegetarian mayonnaise in a sleek glass jar, smooth texture visible, modern minimalist packaging with S.D. Food Products branding" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Veg Mayonnaise</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/tandoorimayoneese.png" alt="Rich red tandoori mayonnaise in authentic Indian packaging, vibrant color, traditional design elements, S.D. Food Products quality assurance" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Tandoori Mayonnaise</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/pizzapastasauce.png" alt="Italian-style pizza pasta sauce in glass jar, rich red tomato base with herbs visible, professional food styling for S.D. Food Products" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Pizza Pasta Sauce</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/tomatoketchup.png" alt="Classic tomato ketchup in squeezable bottle, glossy red appearance, modern packaging design with S.D. Food Products logo" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Tomato Ketchup</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/SnackSauce.png" alt="Versatile snacks sauce in convenient packaging, perfect for chips and finger foods, colorful label design for S.D. Food Products" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Snacks Sauce</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/nodalmasala.png" alt="Noodle masala spice mix in vibrant packaging, perfect for instant noodles, Asian-inspired design with S.D. Food Products branding" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Noodle Masala</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/Namkeen.png" alt="Assorted Indian namkeen snacks in colorful packaging, crunchy texture visible, traditional savory snacks for S.D. Food Products" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Namkeen</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/biscuit.png" alt="Freshly baked biscuits in transparent packaging, golden-brown color, crisp texture visible, S.D. Food Products quality bakery items" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Biscuits</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center p-4">
+                            <img src="https://sdfoods.s3.eu-north-1.amazonaws.com/Sumit+Food+website/Images/Spices.png" alt="Assorted Indian spices collection in various packaging, vibrant colors and aromas, traditional and modern spice blends from S.D. Food Products" class="h-40 object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-center">Spices</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <section class="min-h-screen bg-white py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-red-600 mb-4">Contact Us</h1>
+                    <p class="text-lg text-amber-600">Get in touch with S.D. Food Products</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 bg-red-600 p-8 text-white">
+                            <h2 class="text-2xl font-bold mb-6">Company Information</h2>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-building text-amber-400 mt-1 mr-4"></i>
+                                    <div>
+                                        <h3 class="font-semibold">Company</h3>
+                                        <p>S.D. FOOD PRODUCTS</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-amber-400 mt-1 mr-4"></i>
+                                    <div>
+                                        <h3 class="font-semibold">Registered Office</h3>
+                                        <p>21, Brindavan Garden, Ram Nagar,<br>Sahibabad, Ghaziabad, U.P. - 201005</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-industry text-amber-400 mt-1 mr-4"></i>
+                                    <div>
+                                        <h3 class="font-semibold">Factory Office</h3>
+                                        <p>K.H. No. 1723, Opp. Metro Pillar No. 148,<br>G.T. Road, Chikmaberpur,<br>Sahibabad, Ghaziabad, U.P.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-receipt text-amber-400 mt-1 mr-4"></i>
+                                    <div>
+                                        <h3 class="font-semibold">GST</h3>
+                                        <p>09FWGPS7239C1Z4</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-phone text-amber-400 mt-1 mr-4"></i>
+                                    <div>
+                                        <h3 class="font-semibold">Phone</h3>
+                                        <p>+91-XXXXXXXXXX</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-envelope text-amber-400 mt-1 mr-4"></i>
+                                    <div>
+                                        <h3 class="font-semibold">Email</h3>
+                                        <p>info@sdfoodproducts.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-8">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h2>
+                            <form action="https://formspree.io/f/xnnzeyyn" method="POST" class="space-y-4">
+    <div>
+        <label class="block text-gray-700 mb-2">Name</label>
+        <input type="text" name="name" required 
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+    </div>
+    <div>
+        <label class="block text-gray-700 mb-2">Email</label>
+        <input type="email" name="email" required 
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+    </div>
+    <div>
+        <label class="block text-gray-700 mb-2">Phone</label>
+        <input type="tel" name="phone" 
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+    </div>
+    <div>
+        <label class="block text-gray-700 mb-2">Message</label>
+        <textarea name="message" rows="4" required 
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+        Send Message
+    </button>
+</form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>© 2025 S.D. Food Products | All Rights Reserved</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        function navigateTo(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('page-active');
+            });
+            
+            // Show target page
+            document.getElementById(pageId).classList.add('page-active');
+            
+            // Update navigation active state
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('nav-active');
+            });
+            document.querySelector(`.nav-link[data-page="${pageId}"]`).classList.add('nav-active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Search functionality
+        document.getElementById('product-search').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+            
+            productCards.forEach(card => {
+                const productName = card.querySelector('h3').textContent.toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Handle navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const page = this.getAttribute('data-page');
+                navigateTo(page);
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set home as active page on load
+            navigateTo('home');
+        });
+    </script>
+</body>
+</html>
+
